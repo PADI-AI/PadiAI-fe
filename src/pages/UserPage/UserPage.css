@@ -159,6 +159,12 @@
     border-color: #E1E1E1; */
 }
 
+.contextContainer{
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+}
+
 .documentName{
     text-align: left;
     font-family: "Roboto", sans-serif;
@@ -166,6 +172,16 @@
     font-size: 24px;
     line-height: 36px;
     color: #636363;
+}
+
+.listdocumentName{
+    text-align: left;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 36px;
+    color: #636363;
+    text-decoration: none;
 }
 
 .removeButton{
@@ -223,4 +239,13 @@
 .button-container {
     padding-inline: 3rem;
     padding-bottom: 80px;
+}
+
+.supportText{
+    text-align: left;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 36px;
+    color: #636363;
 }
