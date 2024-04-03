@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from 'react';
 import "./UserPage.css"; // Import CSS for styling
 import SideNav from "../../components/SideNav/SideNav";
 import Intro from "../../components/IntroSec/IntroSec";
@@ -11,8 +11,12 @@ import {
 import Footer from "../../components/Footer/Footer";
 import DownArrow from "../../images/down-arrow.png";
 import { useNavigate, Link } from "react-router-dom";
+import { managerAPI } from '../../API';
 
 const UserPage = () => {
+
+    const [uSerPageData, setuSerPageData] = useState();
+    const [error, setError] = useState(null);
 
     const testlink = 'https://www.delldesignsystem.com/';
 
@@ -34,6 +38,29 @@ const UserPage = () => {
     const handleClick = () => {
         navigate("/start-quiz");
     };
+    const fetchUserPageData = async () => {
+        const fetchUserResult = await managerAPI();
+        if (fetchUserResult.status === 200) {
+            setuSerPageData(fetchUserResult.data.data);
+            // console.log(fetchUserResult.data.data);
+        } else {
+          setError(fetchUserResult);
+        //   console.log(fetchUserResult);
+        }
+      };
+      useEffect(() => {
+        fetchUserPageData();
+        window.scrollTo(0, 0);
+      }, []);
+      if (error) {
+        // Print errors if any
+        return (
+          <div>
+            There's an Error
+          </div>
+        );
+      }
+      console.log(uSerPageData[0].attributes)
 
     return (
         <section className="userPage">
@@ -41,7 +68,7 @@ const UserPage = () => {
             <section className="userPageContent">
                 <div className="userfirstSection">
                     <Intro
-                        name="Padi"
+                        name={uSerPageData[0].attributes.newHire[0].memberName}
                         briefText="Your onboarding dashboard awaits! It's packed with everything you need to get started smoothly. Dive in and complete your tasks at your own pace. Excited to have you on board!"
                     />
                     <div className="button-container">
