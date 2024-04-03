@@ -166,17 +166,16 @@ const UserPage = () => {
                     </div>
                     <div className="secondSectionContainer">
                         <div className="tableContainerBorder">
-                            <div>
+                            <div className="supportText">
                                 I'm am context aware. I'll do my best to help
                                 you with:
                             </div>
-                            <ul>
-                                <li>syntax</li>
-                                <li>syntax</li>
-                                <li>syntax</li>
-                                <li>syntax</li>
-                                <li>ssyntax</li>
-                            </ul>
+                            <div className="contextContainer">
+                                <span className="listdocumentName">Python</span>
+                                <span className="listdocumentName">React</span>
+                                <span className="listdocumentName">Angular</span>
+                                <span className="listdocumentName">.NET</span>
+                            </div>
                         </div>
                     </div>
                 </div>
