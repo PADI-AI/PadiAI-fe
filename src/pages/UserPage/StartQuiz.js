@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import SideNav from '../../components/SideNav/SideNav';
+import Button from '../../components/Button/Button';
 import { useNavigate } from 'react-router-dom';
 import './StartQuiz.css';
 
@@ -51,8 +52,8 @@ function UserDashboard() {
 
     const handleFormSubmission = () => {
         setIsSubmitted(true);
-        setIsLoading(true);
-        navigate('/');
+        // setIsLoading(true);
+        // navigate('/');
     };
 
     const handleInputChange = (e, index) => {
@@ -77,7 +78,7 @@ function UserDashboard() {
           body: JSON.stringify(formattedData)
         })
         .then(response => {
-          setIsLoading(false);
+        //   setIsLoading(false);
           if (!response.ok) {
             throw new Error('Network response was not ok');
           }
@@ -88,10 +89,12 @@ function UserDashboard() {
           // Handle successful response here
         })
         .catch(error => {
-          setIsLoading(false);
+        //   setIsLoading(false);
           console.error('ERROR:', error);
           // Handle error here
         });
+
+        console.log(formattedData);
     };
 
     return (

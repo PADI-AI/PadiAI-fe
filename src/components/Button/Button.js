@@ -19,6 +19,8 @@ const Button = ({
         navigate('/getInTouch');
       } else if (type === 'download') {
         navigate('/', { state: { scrollToDownload: true } });
+      } else if (type === 'submit') {
+        navigate('/', { state: { scrollToDownload: true } });
       }
     };
 
