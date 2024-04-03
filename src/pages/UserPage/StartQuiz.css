@@ -1,0 +1,10 @@
+.testpad {
+    display: flex;
+    padding-inline-start: 280px;
+    justify-content: center;
+}
+
+.customForm {
+    display: flex;
+    padding-inline-start: 280px;
+}
