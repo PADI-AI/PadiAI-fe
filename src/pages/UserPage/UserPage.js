@@ -6,6 +6,7 @@ import LearningMaterials from '../../components/LearningMaterials/LearningMateri
 import UploadDocument from '../../components/UploadDocument/UploadDocument';
 import {materialsDataList, onboardingSubmissionList} from '../../data/userData'
 import Footer from '../../components/Footer/Footer';
+import DownArrow from '../../images/down-arrow.png';
 
 const UserPage = () => {
 
@@ -18,7 +19,15 @@ const UserPage = () => {
     const handleRemoveContent = () => {
 
     }
-    console.log(onboardingSubmissionList)
+    const [activeRow, setActiveRow] = useState([]);
+
+    const toggleRow = (row) => {
+        if (activeRow.includes(row)) {
+            setActiveRow(activeRow.filter((index) => index !== row));
+        } else {
+            setActiveRow([...activeRow, row]);
+        }
+    };
 
 return (
     <section className="userPage">
@@ -28,31 +37,40 @@ return (
                 <Intro
                 name="Padi"
                 briefText="Your onboarding dashboard awaits! It's packed with everything you need to get started smoothly. Dive in and complete your tasks at your own pace. Excited to have you on board!"
-                number="3"
-                numberExp="Submission Left"
+                // number="3"
+                // numberExp="Submission Left"
                 />
             </div>
             <div className="usersecondSection">
-                <div className="secondSectionTitle">Learning Materials</div>
+                <div className="secondSectionTitle">Recommended Schedule</div>
                 <div className="secondSectionContainer">
                     <div className="tableContainerBorder">
-                        {materialsDataList.map((item) => (
-                            <LearningMaterials
-                            materialsText={item.name}
-                            accessLink={item.link}
-                        />
+                        {materialsDataList.map((item, index) => (
+                        <section className="accordionItemHolder">
+                            <button
+                                type="button"
+                                className={`tableItemButton ${activeRow === index ? 'active' : ''}`}
+                                onClick={() => toggleRow(index)}
+                            >
+                                <span className="tableItemTitle">
+                                    {item.week}
+                                </span>
+                                <img src={DownArrow} className="downArrow" alt="downArrow"/>
+                            </button>
+                            <div
+                                className={`accordionContent ${
+                                activeRow.includes(index) ? 'expanded' : ''
+                                }`}
+                            >
+                            {item.details.map((item)=>(
+                                <LearningMaterials
+                                materialsText={item.name}
+                                accessLink={item.link}
+                            />
+                            ))}
+                            </div>
+                        </section>
                         ))}
-                    </div>
-                    <div className="meetingCard">
-                        <div className="meetingCardTitle">
-                            Meeting with Manager
-                        </div>
-                        <div className="meetingCardText">
-                            Thursday, 4 April 2024
-                        </div>
-                        <a href={testlink} className="meetingCardLink">
-                            Link to Teams Meeting
-                        </a>
                     </div>
                 </div>
             </div>

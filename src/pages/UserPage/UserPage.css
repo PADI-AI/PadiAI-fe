@@ -46,11 +46,13 @@
     gap: 0 16px;
 }
 
+
 .tableContainerBorder{
     display:flex;
     flex-direction: column;
-    border: 2px solid;
-    border-color: #E1E1E1;
+    /* border: 2px solid; */
+    /* border-color: #E1E1E1; */
+    gap: 16px;
 }
 
 .meetingCard{
@@ -165,4 +167,22 @@
     color: #FFFFFF;
     border: 0;
     align-items: center;
+}
+
+.accordionItemHolder{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+    border: 2px solid;
+    border-color: #E1E1E1;
+}
+.tableItemButton{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #ffffff;
+    border: none;
+    justify-content: space-between;
+    gap: 24px;
 }
