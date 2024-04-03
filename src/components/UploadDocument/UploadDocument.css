@@ -1,0 +1,82 @@
+.uploadDocumentSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* padding-inline: 5rem;
+    padding-block-start: 56px; */
+    gap: 2rem;
+}
+
+.uploadDocumentSectionContainer{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr;
+    justify-content: center;
+    gap: 0 16px;
+    padding-inline: 5rem;
+    padding-block-start: 56px;
+}
+
+.uploadDocument{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.uploadDocsTitle{
+    text-align: left;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 48px;
+    color: #0E0E0E;
+}
+
+.uploadDocsButton{
+    background-color: #0672CB;
+    display: flex;
+    justify-content: center;
+    padding: 4px 8px;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+    border: 0;
+    align-items: center;
+}
+
+/* .uploadDocumentContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 16px;
+    gap: 16px;
+    border: 2px solid;
+    border-color: #E1E1E1;
+} */
+
+.documentName{
+    text-align: left;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 36px;
+    color: #636363;
+}
+
+.removeButton{
+    background-color: #0672CB;
+    display: flex;
+    justify-content: center;
+    padding: 4px 8px;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+    border: 0;
+    align-items: center;
+}

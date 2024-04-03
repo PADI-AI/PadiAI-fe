@@ -1,0 +1,180 @@
+.userPage{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+}
+.sideBar{
+    width: 280px;
+}
+
+.hrPageContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-inline-start: 280px;
+}
+
+.hrfirstSection{
+    padding-inline: 2rem;
+    background-color: #F5F6F7;
+}
+
+.statsContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    padding-top: 56px;
+    padding-inline: 5rem;
+}
+
+.statsItem{
+    display: flex;
+    flex-direction: column;
+}
+
+.statsNumber{
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 64px;
+    line-height: 78px;
+    color: #0672CB;
+}
+
+.statsDesc{
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 30px;
+    color: #636363;
+
+}
+
+.hrtableSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding-inline: 5rem;
+    padding-top: 56px;
+    gap: 32px;
+}
+
+.hrtableTitle{
+    text-align: left;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 48px;
+    color: #0E0E0E;
+}
+
+.hrtableContainer{
+    display: grid;
+    list-style: none;
+    gap: 16px;
+}
+
+.accordionItemHolder{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+    border: 2px solid;
+    border-color: #E1E1E1;
+}
+
+.tableItemButton{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #ffffff;
+    border: none;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.tableItemTitle{
+    text-align: left;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 40px;
+    color: #0E0E0E;
+}
+
+.downArrow{
+    width: 24px;
+    padding-inline-end: 16px;
+}
+
+.accordionContent{
+    display: none;
+}
+
+.accordionContent.expanded{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    justify-content: center;
+}
+
+.hronboardingtable{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    padding-inline: 16px;
+    border-bottom: 2px solid;
+    border-color: #E1E1E1;
+    gap: 0 8px;
+}
+
+.hronboardingtitle{
+    text-align: left;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 36px;
+    color: #636363;
+}
+.hronboardingtitler{
+    text-align: right;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 36px;
+    color: #636363;
+}
+
+.hrtableitemcontentholder{
+    display: flex;
+    flex-direction: column;
+    padding-top: 16px;
+    gap: 16px;
+}
+
+.hrtableitemcontent{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    padding-inline: 16px;
+    gap: 0 8px;
+}
+
+.onboardingitemtitle{
+    text-align: left;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 30px;
+    color: #636363;
+}
+
+.onboardingitemnumber{
+    text-align: right;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 30px;
+    color: #636363;
+}

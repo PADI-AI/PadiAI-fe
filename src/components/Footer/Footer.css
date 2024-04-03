@@ -1,0 +1,28 @@
+.footerStyle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-inline: 5rem;
+    padding-block: 24px;
+    background-color: #F0F0F0;
+}
+
+.copyright{
+    text-align: left;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #636363;
+}
+
+.footerHyperLink{
+    text-align: left;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #636363;
+    text-decoration: none;
+
+}

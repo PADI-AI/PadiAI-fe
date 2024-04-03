@@ -1,0 +1,58 @@
+.userPageIntroContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    padding-inline: 3rem;
+    gap: 8px;
+    padding-block: 80px;
+}
+
+.userPageIntroText{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 24px;
+}
+
+.introTitle{
+    text-align: left;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 48px;
+    color: #0E0E0E;
+}
+
+.introText{
+    text-align: left;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 36px;
+    color: #636363;
+}
+
+.userPageIntroStats{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+}
+
+.statsNumber{
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 64px;
+    line-height: 76px;
+    color: #0672CB;
+}
+
+.statsText{
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 36px;
+    color: #636363;
+}

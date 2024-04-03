@@ -1,0 +1,82 @@
+.navigationBar{
+    display: flex;
+    flex-direction: column;
+}
+.topnavBar{
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    padding-inline: 24px;
+    border-bottom: 2px solid #E1E1E1;
+    height: 56px;
+    /* width: 100%; */
+    background-color: #ffffff;
+}
+
+.dellLogo{
+    width: 58px;
+    padding-left: 3px;
+    padding-right: 16px;
+}
+
+.groupLogo{
+    display: flex;
+    font-family: "Roboto", sans-serif;
+    align-items: center;
+    font-weight: 300;
+    font-size: 32px;
+    color: #0672CB;
+}
+
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding-inline: 24px;
+    border-right: 2px solid #E1E1E1;
+    height: 100vh;
+    width: 280px;
+    background-color: black;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 56px; /* Stay at the top */
+    left: 0;
+}
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  .toggle-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #444;
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  ul li {
+    padding: 10px;
+    color: #fff;
+    border-bottom: 1px solid #555;
+  }
+
+  ul li:last-child {
+    border-bottom: none;
+  }
