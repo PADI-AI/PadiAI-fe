@@ -30,10 +30,7 @@ const App = () => {
         };
 
         try {
-            const response = await fetch(
-                "http://localhost:7000/completions",
-                options
-            );
+            const response = await fetch("http://localhost:1234/chat", options);
             const data = await response.json();
             setMessage(data.choices[0].message);
         } catch (error) {
