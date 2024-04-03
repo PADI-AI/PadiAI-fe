@@ -13,7 +13,7 @@ const UserPage = () => {
 
     const testlink = 'https://www.delldesignsystem.com/';
 
-    const[isQuizTaken, setQuizTaken] = useState(false);
+    const[isQuizTaken, setQuizTaken] = useState(true);
     const navigate = useNavigate();
 
     const handleSubmitClick = () => {
