@@ -15,9 +15,9 @@ function App() {
       <Routes>
         <Route path="/" element={<UserPage />} />
         <Route path="/start-quiz" element={<StartQuiz />} />
-        {/* <Route path="/chatBot" element={<ChatBotPage />} />
+        <Route path="/chatBot" element={<ChatBotPage />} /> 
         <Route path="/hr" element={<HRPage />} />
-        <Route path="/manager" element={<ManagerPage />} /> */}
+        <Route path="/manager" element={<ManagerPage />} /> 
       </Routes>
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />

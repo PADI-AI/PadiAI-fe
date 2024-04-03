@@ -1,0 +1,82 @@
+.userPage {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}
+
+.sideBar {
+  width: 280px;
+}
+
+.chatPageContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  padding-inline-start: 280px;
+}
+
+.feed {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 32px;
+  list-style-type: none;
+}
+
+.user-message {
+  display: flex;
+  width: 80vw
+}
+
+.bot-message {
+  display: flex;
+  width: 80vw;
+}
+
+.user-messageans {
+  display: flex;
+  flex-direction: row-reverse;
+  background-color: #0672CB;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+  word-wrap: break-word;
+  max-width: 60%;
+  overflow-y: auto;
+  text-align: right;
+  position: absolute;
+  right: 0;
+}
+
+.bot-messageans {
+  display: flex;
+  justify-content: center;
+  background-color: #444654;
+  color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  padding: 10px;
+  word-wrap: break-word;
+  max-width: 60%;
+  text-align: left;
+}
+
+.bottom-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.input-container {
+  position: absolute;
+  bottom: 0;
+  /* Positioned to the bottom */
+  width: 100%;
+  max-width: 650px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

@@ -16,6 +16,8 @@ import { managerAPI } from '../../API';
 const UserPage = () => {
 
     const [uSerPageData, setuSerPageData] = useState();
+    const [materialObject, setmaterialObject] = useState();
+    const [materialArray, setmaterialArray] = useState();
     const [error, setError] = useState(null);
 
     const testlink = 'https://www.delldesignsystem.com/';
@@ -41,8 +43,10 @@ const UserPage = () => {
     const fetchUserPageData = async () => {
         const fetchUserResult = await managerAPI();
         if (fetchUserResult.status === 200) {
-            setuSerPageData(fetchUserResult.data.data);
-            // console.log(fetchUserResult.data.data);
+            // setuSerPageData(fetchUserResult.data.data);
+            setmaterialObject(fetchUserResult.data.data[0].attributes.newHire[0].quizResult);
+            setmaterialArray(fetchUserResult.data.data[0].attributes.teamLearning);
+
         } else {
           setError(fetchUserResult);
         //   console.log(fetchUserResult);
@@ -60,7 +64,38 @@ const UserPage = () => {
           </div>
         );
       }
-      console.log(uSerPageData[0].attributes)
+    //   console.log(uSerPageData[0]?.attributes?.newHire[0]?.memberName)
+    console.log(materialObject)
+    console.log(materialArray)
+
+    //new logic
+    const getMaterialInfo = (materialObject, materialArray) => {
+    const result = [];
+
+    for (const week in materialObject) {
+        const weekName = week;
+        const details = materialObject[week].map(material => {
+        const foundMaterial = materialArray.find(item => item.materialName === material);
+        return {
+            id: foundMaterial ? foundMaterial.id : null,
+            name: material,
+            link: foundMaterial ? foundMaterial.materialLink : null
+        };
+        });
+
+        result.push({
+        week: weekName,
+        details: details
+        });
+    }
+
+    return result;
+    };
+
+    const materialInfo = getMaterialInfo(materialObject, materialArray);
+    console.log(materialInfo);
+    //ends here
+
 
     return (
         <section className="userPage">
@@ -68,7 +103,8 @@ const UserPage = () => {
             <section className="userPageContent">
                 <div className="userfirstSection">
                     <Intro
-                        name={uSerPageData[0].attributes.newHire[0].memberName}
+                        // name={uSerPageData[0]?.attributes?.newHire[0]?.memberName}
+                        name= "Padi"
                         briefText="Your onboarding dashboard awaits! It's packed with everything you need to get started smoothly. Dive in and complete your tasks at your own pace. Excited to have you on board!"
                     />
                     <div className="button-container">
@@ -93,7 +129,7 @@ const UserPage = () => {
                     </div>
                     <div className="secondSectionContainer">
                         <div className="tableContainerBorder">
-                            {materialsDataList.map((item, index) => (
+                            {materialInfo.map((item, index) => (
                                 <section className="accordionItemHolder">
                                     <button
                                         type="button"
