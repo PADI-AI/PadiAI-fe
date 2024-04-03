@@ -50,10 +50,22 @@ function UserDashboard() {
         setIsCompleted(false);
     };
 
-    const handleFormSubmission = () => {
+    const handleFormSubmission = async () => {
         setIsSubmitted(true);
+
+        try {
+            const response = await handleSubmit();
+            if (response.success) {
+                navigate('/');
+            } else {
+                navigate('/start-quiz');
+            }
+        } catch (error) {
+
+        } finally {
+
+        }
         // setIsLoading(true);
-        // navigate('/');
     };
 
     const handleInputChange = (e, index) => {
@@ -85,13 +97,15 @@ function UserDashboard() {
           return response.text(); // Read response as plain text
         })
         .then(data => {
-          console.log('Success:', data);
-          // Handle successful response here
+        // Handle successful response here
+            console.log('Success:', data);
+            // return true;
         })
         .catch(error => {
         //   setIsLoading(false);
           console.error('ERROR:', error);
           // Handle error here
+        //   return false;
         });
 
         console.log(formattedData);
@@ -105,7 +119,7 @@ function UserDashboard() {
                     <div className="flex justify-center items-center h-screen">
                         <button 
                             type="button" 
-                            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 pl-280"
+                            className="quiz-button"
                             onClick={handleStartQuiz}
                         >
                             Start Quiz
@@ -114,6 +128,12 @@ function UserDashboard() {
                 </div>
             ) : (
                 <div className="customForm">
+                    <div className="quiz-title">
+                        <p className="quiz-heading">
+                            React Pre-Test
+                        </p>
+                        <hr></hr>
+                    </div>
                     <form className="w-full" onSubmit={handleSubmit}>
                         {questions.map((question, index) => (
                             <div key={index} className="question m-5">
@@ -129,13 +149,15 @@ function UserDashboard() {
                                 />
                             </div>
                         ))}
-                        <button 
-                            type="submit" 
-                            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-                            onClick={handleFormSubmission}
-                        >
-                            {isLoading ? 'Submitting...' : 'Submit'}
-                        </button>
+                        <div className="button-area">
+                            <button 
+                                type="submit" 
+                                className="quiz-button"
+                                onClick={handleFormSubmission}
+                            >
+                                {isLoading ? 'Submitting...' : 'Submit'}
+                            </button>
+                        </div>
                     </form>
                 </div>
             )}

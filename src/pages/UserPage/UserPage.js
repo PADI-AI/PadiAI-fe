@@ -7,10 +7,14 @@ import UploadDocument from '../../components/UploadDocument/UploadDocument';
 import {materialsDataList, onboardingSubmissionList} from '../../data/userData'
 import Footer from '../../components/Footer/Footer';
 import DownArrow from '../../images/down-arrow.png';
+import { useNavigate, Link } from 'react-router-dom';
 
 const UserPage = () => {
 
     const testlink = 'https://www.delldesignsystem.com/';
+
+    const[isQuizTaken, setQuizTaken] = useState(false);
+    const navigate = useNavigate();
 
     const handleSubmitClick = () => {
 
@@ -28,6 +32,9 @@ const UserPage = () => {
             setActiveRow([...activeRow, row]);
         }
     };
+    const handleClick = () => {
+        navigate('/start-quiz');
+    };
 
 return (
     <section className="userPage">
@@ -37,11 +44,17 @@ return (
                 <Intro
                 name="Padi"
                 briefText="Your onboarding dashboard awaits! It's packed with everything you need to get started smoothly. Dive in and complete your tasks at your own pace. Excited to have you on board!"
-                // number="3"
-                // numberExp="Submission Left"
-                />
+                />   
+                <div className='button-container'>
+                    <button 
+                        className={`go-to-quiz ${isQuizTaken ? 'active' : ''}`}
+                        onClick={handleClick} type="button"
+                    >
+                        Take Pre-Tests
+                    </button> 
+                </div>            
             </div>
-            <div className="usersecondSection">
+            <div className={`usersecondSection ${isQuizTaken ? 'active' : ''}`}>
                 <div className="secondSectionTitle">Recommended Schedule</div>
                 <div className="secondSectionContainer">
                     <div className="tableContainerBorder">
@@ -87,7 +100,7 @@ return (
             /> */}
 
 
-            <div className="usersecondSection">
+            <div className="userthirdSection">
                 <div className="secondSectionContainer">
                     <div className="useruploadDocument">
                         <div className="secondSectionTitle">Document Submission</div>
