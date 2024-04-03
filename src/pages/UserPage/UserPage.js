@@ -13,7 +13,6 @@ import DownArrow from "../../images/down-arrow.png";
 import { useNavigate, Link } from "react-router-dom";
 
 const UserPage = () => {
-    const testlink = "https://www.delldesignsystem.com/";
 
     const testlink = 'https://www.delldesignsystem.com/';
 
